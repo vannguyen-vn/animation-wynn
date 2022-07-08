@@ -113,12 +113,12 @@
         }
 
         .faster{
-            animation-direction: 500ms;
+            animation-duration: 500ms;
         }
 
         .fast{
-            animation-direction: 800ms;
+            animation-duration: 800ms;
         } 
         .slow {
-            animation-direction: 1s;
+            animation-duration: 1s;
         }
