@@ -25,8 +25,14 @@
                 <img src="images/room.jpg" width="708" height="60">
             </div>
             <div class="col-md-2 text-right">
-                <button class="btn btn-primary btn-sm reserve checkAvailabilityBtn"
-                    id="checkAvailabilityBtn-desktop"><span class="check-avail-text">Check Availability</span></button>
+                    <div class="button checkAvaiable">
+                            <button class="btn btn-primary">
+                                <span class="check-avail-text">Check Availability</span>
+                            </button>
+                            <button class="btn btn-primary-hover">
+                                <span class="check-avail-text">Check Availability</span>
+                            </button>
+                        </div>
             </div>
         </div>
     </div>
@@ -112,31 +118,49 @@
         <h3 class="h3 animated fadeIn" data-delay="0.5s" tabindex="0">EXCLUSIVE PACKAGES &amp; OFFERS</h3>
         <div class="container carousel carouselBlock">
             <div class="col-md-4 card fast">
-                <img src="images/thumb.avif" class="img-responsive">
+                <picture><img src="images/thumb.avif" class="img-responsive"></picture>
                 <h2 class="h2">Summer Getaway</h2>
                 <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
                     minimum
                     stay required.</p>
-                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
-                        Special</span></button>
+                <div class="button">
+                    <button class="btn btn-primary">
+                        <span class="check-avail-text">Book This Special</span>
+                    </button>
+                    <button class="btn btn-primary-hover">
+                        <span class="check-avail-text">Book This Special</span>
+                    </button>
+                </div>
             </div>
             <div class="col-md-4 card fast" style="animation-delay: 0.5s">
-                <img src="images/thumb.avif" class="img-responsive">
+                <picture><img src="images/thumb.avif"  class="img-responsive"></picture>
                 <h2 class="h2">Summer Getaway</h2>
                 <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
                     minimum
                     stay required.</p>
-                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
-                        Special</span></button>
+                    <div class="button">
+                            <button class="btn btn-primary">
+                                <span class="check-avail-text">Book This Special</span>
+                            </button>
+                            <button class="btn btn-primary-hover">
+                                <span class="check-avail-text">Book This Special</span>
+                            </button>
+                        </div>
             </div>
             <div class="col-md-4 card fast" style="animation-delay:0.7s">
-                <img src="images/thumb.avif" class="img-responsive">
+                <picture><img src="images/thumb.avif"  class="img-responsive"></picture>
                 <h2 class="h2">Summer Getaway</h2>
                 <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
                     minimum
                     stay required.</p>
-                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
-                        Special</span></button>
+                    <div class="button">
+                            <button class="btn btn-primary">
+                                <span class="check-avail-text">Book This Special</span>
+                            </button>
+                            <button class="btn btn-primary-hover">
+                                <span class="check-avail-text">Book This Special</span>
+                            </button>
+                        </div>
             </div>
         </div>
     </section>
@@ -152,38 +176,63 @@
                     packages,
                     and exclusive experiences for race weekend by signing up through the link below.</p>
             </div>
-            <button class="btn btn-primary btn-sm"><span class="check-avail-text">Stay In The Know</span></button>
+            <div class="button">
+                    <button class="btn btn-primary">
+                        <span class="check-avail-text">Stay In The Know</span>
+                    </button>
+                    <button class="btn btn-primary-hover">
+                        <span class="check-avail-text">Stay In The Know</span>
+                    </button>
+                </div>
         </div>
     </section>
     <section class="text-center bg block2">
         <h3 class="h3" tabindex="0">THINGS TO DO</h3>
         <div class="container carousel">
             <div class="col-md-4 card faster">
-                <img src="images/pic1.jpg" class="img-responsive">
+                <picture><img src="images/pic1.jpg"  class="img-responsive"></picture>
                 <h2 class="h2">Summer Getaway</h2>
                 <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
                     minimum
                     stay required.</p>
-                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
-                        Special</span></button>
+                    <div class="button">
+                            <button class="btn btn-primary">
+                                <span class="check-avail-text">Book This Special</span>
+                            </button>
+                            <button class="btn btn-primary-hover">
+                                <span class="check-avail-text">Book This Special</span>
+                            </button>
+                        </div>
             </div>
             <div class="col-md-4 card fast">
-                <img src="images/pic.avif" class="img-responsive">
+                <picture><img src="images/pic.avif"  class="img-responsive"></picture>
                 <h2 class="h2">Summer Getaway</h2>
                 <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
                     minimum
                     stay required.</p>
-                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
-                        Special</span></button>
+                    <div class="button">
+                            <button class="btn btn-primary">
+                                <span class="check-avail-text">Book This Special</span>
+                            </button>
+                            <button class="btn btn-primary-hover">
+                                <span class="check-avail-text">Book This Special</span>
+                            </button>
+                        </div>
             </div>
             <div class="col-md-4 card faster">
-                <img src="images/thumb.avif" class="img-responsive">
+                <picture><img src="images/thumb.avif" class="img-responsive">
                 <h2 class="h2">Summer Getaway</h2>
                 <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
                     minimum
                     stay required.</p>
-                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
-                        Special</span></button>
+                    <div class="button">
+                            <button class="btn btn-primary">
+                                <span class="check-avail-text">Book This Special</span>
+                            </button>
+                            <button class="btn btn-primary-hover">
+                                <span class="check-avail-text">Book This Special</span>
+                            </button>
+                        </div>
             </div>
     </section>
     <footer class="text-center fadeIn fast" style="background-color: #5a3a27; display: block">
