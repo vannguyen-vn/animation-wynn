@@ -134,17 +134,17 @@
           animation-duration: 1s !important;
 }
 
-picture {
+.picture {
   overflow: hidden;
   cursor: pointer;
 }
 
-picture img {
+.picture img {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-picture:hover img {
+.picture:hover img {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
@@ -162,17 +162,17 @@ picture:hover img {
   overflow: hidden;
 }
 
-.button:hover .btn-primary-hover {
+.button:hover .btn-primary-hover, .button:hover .btn-outline-secondary-hover {
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
 }
 
-.button:hover .btn-primary {
+.button:hover .btn-primary, .button:hover .btn-outline-secondary {
   -webkit-transform: translateY(-101%);
           transform: translateY(-101%);
 }
 
-.button .btn-primary {
+.button .btn-primary, .button .btn-primary-hover, .button .btn-outline-secondary, .button .btn-outline-secondary-hover {
   background-color: #ab0c3d;
   color: #fff;
   position: relative;
@@ -181,18 +181,28 @@ picture:hover img {
   pointer-events: none;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  border: none;
 }
 
 .button .btn-primary-hover {
   position: absolute;
-  top: 0px;
-  left: 0px;
   background-color: white;
   -webkit-transform: translateY(101%);
           transform: translateY(101%);
-  pointer-events: none;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  color: #ab0c3d;
+}
+
+.button .btn-outline-secondary {
+  background-color: white;
+  color: #ab0c3d;
+}
+
+.button .btn-outline-secondary-hover {
+  position: absolute;
+  -webkit-transform: translateY(101%);
+          transform: translateY(101%);
+  background-color: #ab0c3d;
+  color: #FFFF;
 }
 
 .button span {
@@ -205,5 +215,10 @@ picture:hover img {
 
 .checkAvaiable {
   margin-top: 20px;
+}
+
+.wlv-sticky-bb--fixed {
+  top: 0;
+  position: fixed;
 }
 /*# sourceMappingURL=custom.css.map */

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <style>
+        .wrapper-header-wlv {
+            background-color: #5a3a27;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .mega-menu {
+            list-style: none;
+        }
+
+        .carousel {
+            display: flex;
+            margin: 20px auto 50px auto;
+            overflow: hidden;
+        }
+
+        .bg {
+            background: linear-gradient(to bottom, #fff, #fff 109.8px, #f7f7f7 109.8px, #f7f7f7 100%);
+            background-size: 100% 100%;
+            padding-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .mega-menu li {
+            position: static;
+            cursor: pointer;
+            float: left;
+            display: block;
+            padding-left: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #000;
+            line-height: 17px;
+            font-family: "AvenirLTStd85Heavy";
+            text-transform: uppercase;
+            transition: all .2s linear;
+            position: relative;
+        }
+
+        .mega-menu li::after {
+            content: "";
+            position: absolute;
+            bottom: 9px;
+            left: auto;
+            right: 20px;
+            width: 0px;
+            height: 2px;
+            background-color: black;
+            opacity: 0;
+            transition: all .2s linear;
+        }
+
+        .mega-menu li:hover::after {
+            opacity: 1;
+            left: 20px;
+            right: auto;
+            width: calc(100% - 35px);
+        }
+
+        .mega-menu-title {
+            font-size: 20px;
+            font-family: "Big Caslon";
+            line-height: 26px;
+            text-align: left;
+            border-bottom: 2px solid #000;
+            padding-bottom: 7.5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .main-menu {
+            position: relative;
+
+        }
+
+        .mega-backdrop {
+            position: absolute;
+            top: 40px;
+            visibility: hidden;
+            opacity: 0.5;
+            left: 10px;
+            width: calc(100vw - 40px);
+            padding-bottom: 30px;
+            z-index: 99999;
+            background-color: white;
+            transition: all .2s linear;
+            transform-origin: top right;
+            box-shadow: 0px 20px 8px 3px rgb(14 0 40 / 25%);
+        }
+
+        .is-open{
+            visibility: visible; 
+            opacity: 1;
+            top: 60px;
+        }
+
+        .page-header {
+            margin: 40px auto 20px auto;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <header class="wrapper-header-wlv  wow fadeInDown" data-wow-duration="0.5s">
+        <ul class="container"
+            style="text-align: right; display: flex;list-style: none;justify-content: right;margin: 10px auto;">
+            <li style="margin-right: 20px">Sign In</li>
+            <li>Join Wynn Rewards</li>
+        </ul>
+    </header>
+    <div class="bookingbar-logo-wrap wow fadeInDown" data-wow-duration=".7s" data-wow-delay="0.2s">
+        <div class="container">
+            <div class="col-md-10 text-lelf" style="display: flex">
+                <img class="img-responsive" src="images/logo.gif" width=129
+                    alt="Las Vegas Luxury Hotels at Wynn Las Vegas and Encore Resort" loading="lazy">
+                <img src="images/room.jpg" width="708" height="60">
+            </div>
+            <div class="col-md-2 text-right">
+                <button class="btn btn-primary btn-sm reserve checkAvailabilityBtn"
+                    id="checkAvailabilityBtn-desktop"><span class="check-avail-text">Check Availability</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="wow fadeIn main-menu" data-wow-duration="1s" data-wow-delay="0s" style="margin: 30px auto">
+        <ul class="container mega-menu">
+            <li class="wow fadeInLeft">ROOMS & SUITES
+
+            </li>
+            <li class="wow fadeInLeft">WYNN REWARDS</li>
+            <li class="wow fadeInLeft">OFFERS</li>
+            <li class="wow fadeInLeft">DINING</li>
+            <li class="wow fadeInLeft">CASINO</li>
+            <li class="wow fadeInLeft">EXPERIENCES</li>
+            <li class="wow fadeInLeft">ENTERTAINMENT</li>
+            <li class="wow fadeInLeft">SHOPS</li>
+            <li class="wow fadeInLeft">MEETINGS & EVENTS</li>
+        </ul>
+        <div class="mega-backdrop">
+            <div class="dropdown-mega-menu" style="left: 50%">
+                <div class="container">
+                    <h4 class="mega-menu-title"> Rooms &amp; Suites</h4>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="menu-list">
+                                <h3 class="h5 menu-title-underline"> Encore Las Vegas – Resort Rooms </h3>
+                                <ul>
+                                    <li>Encore Deluxe Resort</li>
+                                    <li>Encore Panoramic View</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="menu-list">
+                                <h3 class="h5 menu-title-underline">Encore Las Vegas – Tower Suites </h3>
+                                <ul class="">
+                                    <li>Encore Tower King</li>
+                                    <li>Encore Tower Two Queen</li>
+                                    <li>Encore Parlor Suite</li>
+                                    <li>Encore Salon Suite</li>
+                                    <li>Encore Two Bedroom Apartment</li>
+                                    <li>Encore Three Bedroom Duplex</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="menu-list">
+                                <h3 class="h5 menu-title-underline">Encore Las Vegas – Tower Suites </h3>
+                                <ul class="">
+                                    <li>Encore Tower King</li>
+                                    <li>Encore Tower Two Queen</li>
+                                    <li>Encore Parlor Suite</li>
+                                    <li>Encore Salon Suite</li>
+                                    <li>Encore Two Bedroom Apartment</li>
+                                    <li>Encore Three Bedroom Duplex</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="menu-list">
+                                <h3 class="h5 menu-title-underline">Encore Las Vegas – Resort Rooms </h3>
+                                <ul class="">
+                                    <li>Encore Deluxe Resort</li>
+                                    <li>Encore Panoramic View</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner wow fadeIn" data-wow-duration="0.8s" data-wow-delay="1s">
+        <img src="images/banner.jpg" width="100%">
+    </div>
+    <div class="page-header text-center wow fadeInUp"  data-wow-duration="0.8s" data-wow-delay="0.3s">
+        <h1 class="h1">Welcome to Wynn and Encore Las Vegas</h1>
+        <div class="copy-wrap">
+            <p>There’s nothing in the world like Las Vegas—and there’s absolutely nothing in Las Vegas like Wynn.
+            </p>
+        </div>
+    </div>
+    <section class="text-center bg">
+        <h3 class="h3 wow fadeIn"  data-wow-delay="0.5s" tabindex="0">EXCLUSIVE PACKAGES &amp; OFFERS</h3>
+        <div class="container carousel">
+            <div class="col-md-4 card  wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                <img src="images/thumb.avif" class="img-responsive">
+                <h2 class="h2">Summer Getaway</h2>
+                <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
+                    minimum
+                    stay required.</p>
+                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
+                        Special</span></button>
+            </div>
+            <div class="col-md-4 card wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                <img src="images/thumb.avif" class="img-responsive">
+                <h2 class="h2">Summer Getaway</h2>
+                <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
+                    minimum
+                    stay required.</p>
+                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
+                        Special</span></button>
+            </div>
+            <div class="col-md-4 card  wow fadeInLeft" data-wow-delay="0.5s">
+                <img src="images/thumb.avif" class="img-responsive">
+                <h2 class="h2">Summer Getaway</h2>
+                <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
+                    minimum
+                    stay required.</p>
+                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
+                        Special</span></button>
+            </div>
+        </div>
+    </section>
+    <section class="text-center" style="margin: 50px auto;">
+        <div class="container">
+            <div class="col-md-6">
+                <img src="images/pic.avif" class="img-responsive">
+            </div>
+            <div class="col-md-6">
+                <h2 class="header-secondary ">The Race Is On</h2>
+                <p>Wynn Las Vegas is proud to be a founding partner of Formula 1’s new electric F1 race in November,
+                    2023, live from the Las Vegas Strip. F1 fans, be sure to get the inside track on rooms,
+                    packages,
+                    and exclusive experiences for race weekend by signing up through the link below.</p>
+            </div>
+            <button class="btn btn-primary btn-sm"><span class="check-avail-text">Stay In The Know</span></button>
+        </div>
+    </section>
+    <section class="text-center bg ">
+        <h3 class="h3" tabindex="0">THINGS TO DO</h3>
+        <div class="container carousel">
+            <div class="col-md-4 card wow fadeInLeft" data-wow-duration=".5s">
+                <img src="images/pic1.jpg" class="img-responsive">
+                <h2 class="h2">Summer Getaway</h2>
+                <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
+                    minimum
+                    stay required.</p>
+                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
+                        Special</span></button>
+            </div>
+            <div class="col-md-4 card wow fadeIn" data-wow-duration=".5s">
+                <img src="images/pic.avif" class="img-responsive">
+                <h2 class="h2">Summer Getaway</h2>
+                <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
+                    minimum
+                    stay required.</p>
+                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
+                        Special</span></button>
+            </div>
+            <div class="col-md-4 card wow fadeInRight" data-wow-duration=".5s"s>
+                <img src="images/thumb.avif" class="img-responsive">
+                <h2 class="h2">Summer Getaway</h2>
+                <p class="card-desc">Save up to 15% on accommodations and enjoy $30 in daily resort credit. No
+                    minimum
+                    stay required.</p>
+                <button class="btn btn-primary btn-sm"><span class="check-avail-text">Book This
+                        Special</span></button>
+            </div>
+    </section>
+    <footer class="text-center wow fadeIn" data-wow-duration="0.8s" style="background-color: #5a3a27; display: block">
+        <img src="images/footer.jpg">
+    </footer>
+    <script>
+        new WOW(
+            {
+               offset: 100,
+               mobile: false,
+            }
+        ).init();
+        $(".mega-menu li")
+            .mouseenter((e) => {
+                e.preventDefault();
+                $(".mega-backdrop").addClass("is-open");
+            })
+            .mouseleave((e) => {
+                e.preventDefault();
+                $(".mega-backdrop").removeClass("is-open");
+            });
+        $(".mega-menu>li").each((i, item) => $(item).attr("data-wow-delay", i / 10 + .2 + "s"));
+
+    </script>
+</body>
+
+</html>
