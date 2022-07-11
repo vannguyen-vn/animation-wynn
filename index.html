@@ -239,30 +239,24 @@
         <img src="images/footer.jpg">
     </footer>
     <script>
+        // animation lib
         const animateCSS = (element, animation) => {
-            let isAnimated = false;
-
             new Promise((resolve, reject) => {
                 const animationName = `${animation}`;
                 const node = $(element);
                 node.addClass("animated" + " " + animationName);
-                // isAnimated = true;
 
-                function handleAnimationEnd(event) {
-                    event.stopPropagation();
-                    node.removeClass("animated" + " " + animationName);
-                    resolve('Animation ended');
-                }
-
-                if (isAnimated) {
-                    node.on('animationend', handleAnimationEnd);
-                }
-
+                // function handleAnimationEnd(event) {
+                //     event.stopPropagation();
+                //     node.removeClass("animated" + " " + animationName);
+                //     resolve('Animation ended');
+                // }
+                // node.on('animationend', handleAnimationEnd);
             })
         };
 
-        function reveal() {
-            // let windowTop = $(window).scrollTop();
+        // Added animation style
+        const reveal = () => {
             var reveals = $(".carouselBlock .card");
             var items = $(".block2 .card");
             for (var i = 0; i < reveals.length; i++) {
@@ -282,31 +276,37 @@
             }
         }
 
-        window.addEventListener("scroll", reveal);
-
-        $(".mega-menu li")
-            .mouseenter((e) => {
-                e.preventDefault();
-                $(".mega-backdrop").addClass("is-open");
-            })
-            .mouseleave((e) => {
-                e.preventDefault();
-                $(".mega-backdrop").removeClass("is-open");
-            });
-        $(".carouselBlock .card").each((i, item) => $(item).attr("style", "animation-delay:" + Number(i / 10 + .5) +
-            "s"));
-
-        $(".mega-menu>li").each((i, item) => $(item).attr("style", "animation-delay:" + Number(i / 10 + .2) + "s"));
-
-        let scrollTop = () => {
-            // var windowTop = $(window).scrollTop(),
-            // top = $('#wlv-stick-here').offset().top,
-            // if (windowTop > top) {
-            // stickyElement.addClass('wlv-sticky-bb--fixed');
-            // } else {
-            // stickyElement.removeClass('wlv-sticky-bb--fixed');
-
+        // Added animation mega menu
+        const menuAnimate = () => {
+            $(".mega-menu li")
+                .mouseenter((e) => {
+                    e.preventDefault();
+                    $(".mega-backdrop").addClass("is-open");
+                })
+                .mouseleave((e) => {
+                    e.preventDefault();
+                    $(".mega-backdrop").removeClass("is-open");
+                });
+            $(".mega-menu>li").each((i, item) => $(item).attr("style", "animation-delay:" + Number(i / 10 +
+                    .2) +
+                "s"));
         }
+
+        // Added animation card
+        const cardAnimate = (element) => $(element).each((i, item) => $(item).attr("style", "animation-delay:" +
+            Number(
+                i / 10 + .5) + "s"));
+
+        const initAnimation = () => {
+            $(window).scroll(() => {
+                reveal();
+                cardAnimate(".carouselBlock .card");
+            });
+
+            menuAnimate();
+        };
+
+        initAnimation();
     </script>
 </body>
 
