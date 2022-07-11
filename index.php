@@ -10,32 +10,36 @@
 </head>
 
 <body>
-    <header class="wrapper-header-wlv fadeInDown animated fast">
-        <ul class="container"
-            style="text-align: right; display: flex;list-style: none;justify-content: right;margin: 10px auto;">
-            <li style="margin-right: 20px">Sign In</li>
-            <li>Join Wynn Rewards</li>
-        </ul>
-    </header>
-    <div class="bookingbar-logo-wrap fadeInDown animated faster" style="animation-delay: 0.5s">
-        <div class="container">
-            <div class="col-md-10 text-lelf" style="display: flex">
-                <img class="img-responsive" src="images/logo.gif" width=129
-                    alt="Las Vegas Luxury Hotels at Wynn Las Vegas and Encore Resort" loading="lazy">
-                <img src="images/room.jpg" width="708" height="60">
-            </div>
-            <div class="col-md-2 text-right">
-                <div class="button checkAvaiable">
-                    <button class="btn btn-primary">
-                        <span class="check-avail-text">Check Availability</span>
-                    </button>
-                    <button class="btn btn-primary-hover">
-                        <span class="check-avail-text">Check Availability</span>
-                    </button>
+    <div id="wlv-stick-here"></div>
+    <div class="wlv-sticky-wrapper fast">
+        <header class="wrapper-header-wlv fadeInDown animated fast">
+            <ul class="container"
+                style="text-align: right; display: flex;list-style: none;justify-content: right;margin: 10px auto;">
+                <li style="margin-right: 20px">Sign In</li>
+                <li>Join Wynn Rewards</li>
+            </ul>
+        </header>
+        <div class="bookingbar-logo-wrap fadeInDown animated faster" style="animation-delay: 0.5s">
+            <div class="container">
+                <div class="col-md-10 text-lelf" style="display: flex">
+                    <img class="img-responsive" src="images/logo.gif" width=129
+                        alt="Las Vegas Luxury Hotels at Wynn Las Vegas and Encore Resort" loading="lazy">
+                    <img src="images/room.jpg" width="708" height="60">
+                </div>
+                <div class="col-md-2 text-right">
+                    <div class="button checkAvaiable">
+                        <button class="btn btn-primary">
+                            <span class="check-avail-text">Check Availability</span>
+                        </button>
+                        <button class="btn btn-primary-hover">
+                            <span class="check-avail-text">Check Availability</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="animated fadeIn main-menu fast" style="animation-delay: 0.7s">
         <ul class="container mega-menu">
             <li class="animated fadeInLeft">ROOMS & SUITES
@@ -167,7 +171,7 @@
     <section class="text-center" style="margin: 50px auto;">
         <div class="container">
             <div class="col-md-6">
-                <div class="picture"><img src="images/pic.avif" class="img-responsive"></div>
+                <div><img src="images/pic.avif" class="img-responsive"></div>
             </div>
             <div class="col-md-6">
                 <h2 class="header-secondary ">The Race Is On</h2>
@@ -239,29 +243,32 @@
         <img src="images/footer.jpg">
     </footer>
     <script>
-        const animateCSS = (element, animation) =>
+        let windowHeight = window.innerHeight;
+
+        // animation lib
+        const animateCSS = (element, animation) => {
             new Promise((resolve, reject) => {
                 const animationName = `${animation}`;
                 const node = $(element);
                 node.addClass("animated" + " " + animationName);
 
-                /*function handleAnimationEnd(event) {
-                    event.stopPropagation();
-                    node.removeClass("animated" + " " + animationName);
-                    resolve('Animation ended');
-                }
+                // function handleAnimationEnd(event) {
+                //     event.stopPropagation();
+                //     node.removeClass("animated" + " " + animationName);
+                //     resolve('Animation ended');
+                // }
+                // node.on('animationend', handleAnimationEnd);
+            })
+        };
 
-                //node.one('animationend', handleAnimationEnd, { once: true });*/
-            });
-
-        function reveal() {
-            var reveals = $(".carouselBlock .card");
-            var items = $(".block2 .card");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementTop1 = items[i].getBoundingClientRect().top;
-                var elementVisible = 150;
+        // Added animation style
+        const reveal = () => {
+            let reveals = $(".carouselBlock .card");
+            let items = $(".block2 .card");
+            for (let i = 0; i < reveals.length; i++) {
+                let elementTop = reveals[i].getBoundingClientRect().top;
+                let elementTop1 = items[i].getBoundingClientRect().top;
+                let elementVisible = 150;
                 if (elementTop < windowHeight - elementVisible) {
                     animateCSS(reveals[i], "fadeInLeft");
                 }
@@ -274,21 +281,50 @@
             }
         }
 
-        window.addEventListener("scroll", reveal);
+        // Added animation mega menu
+        const menuAnimate = () => {
+            $(".mega-menu li")
+                .mouseenter((e) => {
+                    e.preventDefault();
+                    $(".mega-backdrop").addClass("is-open");
+                })
+                .mouseleave((e) => {
+                    e.preventDefault();
+                    $(".mega-backdrop").removeClass("is-open");
+                });
 
-        $(".mega-menu li")
-            .mouseenter((e) => {
-                e.preventDefault();
-                $(".mega-backdrop").addClass("is-open");
-            })
-            .mouseleave((e) => {
-                e.preventDefault();
-                $(".mega-backdrop").removeClass("is-open");
-            });
-        $(".carouselBlock .card").each((i, item) => $(item).attr("style", "animation-delay:" + Number(i / 10 + .5) +
-            "s"));
+            $(".mega-menu>li").each((i, item) => $(item).attr("style", "animation-delay:" + Number(i / 10 + .2) +
+                "s"));
+        }
 
-        $(".mega-menu>li").each((i, item) => $(item).attr("style", "animation-delay:" + Number(i / 10 + .2) + "s"));
+        // Added animation card
+        const cardAnimate = (element) => $(element).each((i, item) => $(item).attr("style", "animation-delay:" + Number(
+            i / 10 + .5) + "s"));
+
+
+        // Added anmation fixed header
+        const headerFixed = () => {
+            let windowTop = $(window).scrollTop();
+            let element = $(".wlv-sticky-wrapper");
+            if (windowTop > 120) {
+                element.addClass("wlv-sticky-bb--fixed")
+                animateCSS(element, "fadeInDown");
+            } else {
+                element.removeClass("wlv-sticky-bb--fixed animated fadeInDown")
+            }
+
+        }
+
+        const initAnimation = () => {
+            menuAnimate();
+        };
+
+        initAnimation();
+        $(window).scroll(() => {
+            reveal();
+            cardAnimate(".carouselBlock .card");
+            headerFixed();
+        });
     </script>
 </body>
 
