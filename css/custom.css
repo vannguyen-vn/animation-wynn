@@ -11,8 +11,6 @@
 }
 
 .carousel {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 20px auto 50px auto;
   overflow: hidden;
@@ -37,8 +35,7 @@
   line-height: 17px;
   font-family: "AvenirLTStd85Heavy";
   text-transform: uppercase;
-  -webkit-transition: all .2s linear;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
   position: relative;
 }
 
@@ -52,8 +49,7 @@
   height: 2px;
   background-color: black;
   opacity: 0;
-  -webkit-transition: all .2s linear;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .mega-menu li:hover::after {
@@ -90,12 +86,9 @@
   z-index: 9;
   background-color: white;
   pointer-events: none;
-  -webkit-transition: all .2s linear;
-  transition: all .2s linear;
-  -webkit-transform-origin: top right;
-          transform-origin: top right;
-  -webkit-box-shadow: 0px 20px 8px 3px rgba(14, 0, 40, 0.25);
-          box-shadow: 0px 20px 8px 3px rgba(14, 0, 40, 0.25);
+  transition: all 0.2s linear;
+  transform-origin: top right;
+  box-shadow: 0px 20px 8px 3px rgba(14, 0, 40, 0.25);
 }
 
 .is-open {
@@ -138,15 +131,11 @@
   overflow: hidden;
   cursor: pointer;
 }
-
 .picture img {
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 .picture:hover img {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .button {
@@ -155,23 +144,17 @@
   color: #ab0c3d;
   margin-top: 10px;
   display: inline-block;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border-radius: 3px;
   cursor: pointer;
   overflow: hidden;
 }
-
 .button:hover .btn-primary-hover, .button:hover .btn-outline-secondary-hover {
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
+  transform: translateY(0%);
 }
-
 .button:hover .btn-primary, .button:hover .btn-outline-secondary {
-  -webkit-transform: translateY(-101%);
-          transform: translateY(-101%);
+  transform: translateY(-101%);
 }
-
 .button .btn-primary, .button .btn-primary-hover, .button .btn-outline-secondary, .button .btn-outline-secondary-hover {
   background-color: #ab0c3d;
   color: #fff;
@@ -179,36 +162,28 @@
   top: 0px;
   right: 0px;
   pointer-events: none;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border: none;
 }
-
 .button .btn-primary-hover {
   position: absolute;
   background-color: white;
-  -webkit-transform: translateY(101%);
-          transform: translateY(101%);
+  transform: translateY(101%);
   color: #ab0c3d;
 }
-
 .button .btn-outline-secondary {
   background-color: white;
   color: #ab0c3d;
 }
-
 .button .btn-outline-secondary-hover {
   position: absolute;
-  -webkit-transform: translateY(101%);
-          transform: translateY(101%);
+  transform: translateY(101%);
   background-color: #ab0c3d;
-  color: #FFFF;
+  color: white;
 }
-
 .button span {
   pointer-events: none;
 }
-
 .button .btn, .button button {
   margin-top: 0px;
 }
@@ -217,8 +192,11 @@
   margin-top: 20px;
 }
 
+.card {
+  opacity: 0;
+}
+
 .wlv-sticky-bb--fixed {
   top: 0;
   position: fixed;
-}
-/*# sourceMappingURL=custom.css.map */
+}/*# sourceMappingURL=custom.css.map */

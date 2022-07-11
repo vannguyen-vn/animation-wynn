@@ -167,7 +167,7 @@
     <section class="text-center" style="margin: 50px auto;">
         <div class="container">
             <div class="col-md-6">
-                <div class="picture"><img src="images/pic.avif" class="img-responsive"></div>
+                <div><img src="images/pic.avif" class="img-responsive"></div>
             </div>
             <div class="col-md-6">
                 <h2 class="header-secondary ">The Race Is On</h2>
@@ -239,22 +239,30 @@
         <img src="images/footer.jpg">
     </footer>
     <script>
-        const animateCSS = (element, animation) =>
+        const animateCSS = (element, animation) => {
+            let isAnimated = false;
+
             new Promise((resolve, reject) => {
                 const animationName = `${animation}`;
                 const node = $(element);
                 node.addClass("animated" + " " + animationName);
+                // isAnimated = true;
 
-                /*function handleAnimationEnd(event) {
+                function handleAnimationEnd(event) {
                     event.stopPropagation();
                     node.removeClass("animated" + " " + animationName);
                     resolve('Animation ended');
                 }
 
-                //node.one('animationend', handleAnimationEnd, { once: true });*/
-            });
+                if (isAnimated) {
+                    node.on('animationend', handleAnimationEnd);
+                }
+
+            })
+        };
 
         function reveal() {
+            // let windowTop = $(window).scrollTop();
             var reveals = $(".carouselBlock .card");
             var items = $(".block2 .card");
             for (var i = 0; i < reveals.length; i++) {
@@ -289,6 +297,16 @@
             "s"));
 
         $(".mega-menu>li").each((i, item) => $(item).attr("style", "animation-delay:" + Number(i / 10 + .2) + "s"));
+
+        let scrollTop = () => {
+            // var windowTop = $(window).scrollTop(),
+            // top = $('#wlv-stick-here').offset().top,
+            // if (windowTop > top) {
+            // stickyElement.addClass('wlv-sticky-bb--fixed');
+            // } else {
+            // stickyElement.removeClass('wlv-sticky-bb--fixed');
+
+        }
     </script>
 </body>
 
