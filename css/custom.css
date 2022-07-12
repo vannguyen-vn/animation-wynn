@@ -2,6 +2,7 @@
   background-color: #5a3a27;
   color: white;
   text-transform: uppercase;
+  z-index:2;
 }
 
 .mega-menu {
@@ -230,4 +231,8 @@
   top: 0px;
   left: 0px;
   transform: scale(1.05);
-}/*# sourceMappingURL=custom.css.map */
+}
+.bookingbar-logo-wrap {
+  z-index: 1;
+}
+/*# sourceMappingURL=custom.css.map */
