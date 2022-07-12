@@ -208,4 +208,26 @@
   position: fixed;
   left: 0px;
   right: 0px;
+}
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  height: 414px;
+  transform-style: preserve-3d;
+}
+
+.banner img {
+  margin-top: 0px;
+  transition: all 0.5s ease-out;
+  height: 414px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bannerScroll {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: scale(1.05);
 }/*# sourceMappingURL=custom.css.map */

@@ -293,13 +293,11 @@
                     $(".mega-backdrop").removeClass("is-open");
                 });
 
-            $(".mega-menu>li").each((i, item) => $(item).attr("style", "animation-delay:" + Number(i / 10 + .2) +
-                "s"));
+            $(".mega-menu>li").each((i, item) => $(item).attr("style", "animation-delay:" + Number(i / 10 + .2) + "s"));
         }
 
         // Added animation card
-        const cardAnimate = (element) => $(element).each((i, item) => $(item).attr("style", "animation-delay:" + Number(
-            i / 10 + .5) + "s"));
+        const cardAnimate = (element) => $(element).each((i, item) => $(item).attr("style", "animation-delay:" + Number(i / 10 + .5) + "s"));
 
 
         // Added anmation fixed header
@@ -318,12 +316,26 @@
         const initAnimation = () => {
             menuAnimate();
         };
+        let count = 0;
+
+        const bannerParalax = () => {
+            let bannerTop = $(".banner").get(0).getBoundingClientRect().top;
+            console.log(bannerTop);
+            if (bannerTop < 200 && bannerTop > -218) {
+                count < 15 ? count += 3 : count -= 20;
+                $(".banner img").addClass("bannerScroll");
+                $(".banner img").css("top", count);
+            } else {
+                $(".banner img").removeClass("bannerScroll");
+            }
+        }
 
         initAnimation();
-        $(window).scroll(() => {
+        $(window).on("scroll", (e) => {
             reveal();
             cardAnimate(".carouselBlock .card");
             headerFixed();
+            bannerParalax();
         });
     </script>
 </body>
